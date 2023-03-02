@@ -1,0 +1,12 @@
+.cars {
+    h2 {
+        color: $bg-color;
+    }
+    li {
+        color: $color-04;
+
+        a {
+            background-color: $color-default;
+        }
+    }
+}
