@@ -1,3 +1,7 @@
+
+ @use 'sass:math';
+
+
 * {
     border: 0;
     margin: 0;
@@ -13,6 +17,7 @@ p {
     display: block;
 }
 
+article,
 header,
 section,
 footer {
@@ -28,7 +33,14 @@ section {
 
 .container {
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: math.div(1200, 1400) * 100%;
+}
+
+@media(max-width: 1199px){
+  .container{
+    max-width: math.div(1000, 1200) * 100;
+  }
+
 }
 
 img {
@@ -43,7 +55,7 @@ body {
 }
 
 p {
-    color: $color-01;
+    color: #f5e509;
     font-size: $font-normal;
     margin-bottom: $mb;
     text-align: $align;
@@ -90,6 +102,24 @@ header img{
     width: 80px;
 }
 
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.7rem;
+    font-size: 15px;
+}
+
+.menu2 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
 footer {
     background-color: $bg-color
+}
+footer p {
+    text-align: center;
+    padding: $space-default;
+    color: black;
 }

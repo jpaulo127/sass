@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   border: 0;
   margin: 0;
@@ -13,6 +14,7 @@ p {
   display: block;
 }
 
+article,
 header,
 section,
 footer {
@@ -28,9 +30,14 @@ section {
 
 .container {
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 85.7142857143%;
 }
 
+@media (max-width: 1199px) {
+  .container {
+    max-width: 83.3333333333;
+  }
+}
 img {
   width: 100%;
   height: auto;
@@ -43,7 +50,7 @@ body {
 }
 
 p {
-  color: #12181e;
+  color: #f5e509;
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
   text-align: left;
@@ -89,41 +96,104 @@ header img {
   width: 80px;
 }
 
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.7rem;
+  font-size: 15px;
+}
+
+.menu2 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+
 footer {
   background-color: #fffaf2;
 }
 
+footer p {
+  text-align: center;
+  padding: 1.5rem;
+  color: black;
+}
+
 .blocks {
+  /*
+  bem css
+  -block
+  -element[
+  -modifier
+
+  -padrão projeto/Design paterns
+
+  exemplo
+  .cars__title
+  .cars__list
+  .cars__item
+  .cars__button
+  .cars__img-conteiner
+  */
   padding: 3rem 0;
   background-color: #999;
 }
-.blocks h2 {
+.blocks__title {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   color: #fffaf2;
 }
-.blocks ul {
+.blocks__destack {
+  color: #444;
+  font-size: 1.5rem;
+  padding: 1.5rem;
+}
+.blocks__destack--destack {
+  color: #e4bb04;
+}
+.blocks__description {
+  color: #444;
+  font-size: 1.5rem;
+  padding: 1.5rem;
+}
+.blocks__description--destack {
+  color: #e4bb04;
+}
+.blocks__list {
   list-style-type: none;
   font-size: 1.2rem;
   display: flex;
   justify-content: space-between;
-  height: 250px;
-  padding: 1rem 0;
+  height: auto;
+  padding: 1.5rem auto;
   width: 100%;
 }
-.blocks li {
+.blocks__item {
   color: #999;
   display: block;
+  float: left;
+  text-align: center;
   margin: 1.5rem auto;
-  width: 30%;
+  width: calc(33% - 15px);
 }
-.blocks li .img-container {
+@media (max-width: 999px) {
+  .blocks__item {
+    width: calc(99% - 30px);
+  }
+}
+.blocks__img-container {
   display: block;
-  height: 200px;
+  height: 15rem;
   overflow: hidden;
   width: 100%;
 }
-.blocks li a {
+@media (max-width: 999px) {
+  .blocks__img-container {
+    height: 29rem;
+  }
+}
+.blocks__button {
   background-color: #12181e;
   border-radius: 5px;
   color: white;
@@ -135,13 +205,27 @@ footer {
   text-decoration: none;
 }
 
-.cars h2 {
-  color: #fffaf2;
+.cars__title {
+  color: #999;
 }
-.cars li {
-  color: #222;
+.cars__item {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 1px rgba(68, 68, 68, 0.25);
+  color: #999;
+  display: flex;
+  float: left;
+  height: max-content;
+  justify-content: center;
+  align-items: baseline;
+  flex-flow: column;
 }
-.cars li a {
+.cars__item--destack {
+  background-color: #222;
+  border: 1px solid #12181e;
+  box-shadow: 0 0 1px rgba(68, 68, 68, 0.25);
+}
+.cars__button {
   background-color: #444;
 }
 
@@ -149,13 +233,13 @@ footer {
   background-color: #222;
   padding: 1.5rem;
 }
-.destack h1 {
+.destack__title {
   color: #f00;
   float: left;
   font-size: 3rem;
   margin-top: 0;
 }
-.destack h2 {
+.destack__subtitle {
   text-align: center;
   color: #fffaf2;
   float: left;
@@ -163,14 +247,14 @@ footer {
   margin-left: 1.5rem;
   margin-top: 1.5rem;
 }
-.destack img {
+.destack__image {
   width: 100%;
   height: auto;
   margin: 1.5rem auto;
 }
-.destack p {
+.destack__description {
   font-size: 1.5rem;
-  color: #999;
+  color: #fffaf2;
   padding: 2rem 0;
   width: 100%;
 }

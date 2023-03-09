@@ -1,48 +1,92 @@
 .blocks {
 
+    /*
+    bem css
+    -block
+    -element[
+    -modifier
+    
+    -padrão projeto/Design paterns
+
+    exemplo
+    .cars__title
+    .cars__list
+    .cars__item
+    .cars__button
+    .cars__img-conteiner
+    */
+
     padding: 3rem 0;
     background-color: $color-02;
 
-    h2 {
+    &__title {
         font-family: $font-family-default;
         text-align: center;
         color: $bg-color;
     }
+    &__destack{
+        color: $color-default;
+        font-size: $font-normal;
+        padding: $space-default;
+        &--destack {
+            color: #e4bb04;
+        }
 
-    ul {
+
+    }
+
+
+    &__description {
+        color: $color-default;
+        font-size: $font-normal;
+        padding: $space-default;
+        &--destack {
+            color: #e4bb04;
+        }
+    }
+
+    &__list {
         list-style-type: none;
         font-size: $font-small;
         display: flex;
         justify-content: space-between;
-        height: 250px;
-        padding: 1rem 0;
+        height: auto;
+        padding: $space-default auto;
         width: 100%;
     }
 
-    li {
+    &__item {
         color: $color-02;
         display: block;
+        float: left;
+        text-align: center;
         margin: $space-default auto;
-        width: 30%;
-        
-        .img-container {
-            display: block;
-            height: 200px;
-            overflow: hidden;
-            width: 100%;
-        }
+        width: calc(99% / 3 - 15px);
 
-        a {
-            background-color: $color-01;
-            border-radius: 5px;
-            color: white;
-            display: block;
-            font-size: $font-medium;
-            margin: $mt-02 auto $mb;
-            padding: 4px 8px;
-            text-align: center;
-            text-decoration: none;
+        @media (max-width: $tablet) {
+            width: calc(99% - 30px);
+        }
+        
+    }
+    &__img-container {
+        display: block;
+        height: 15rem;
+        overflow: hidden;
+        width: 100%;
+        @media (max-width: $tablet) {
+            height: 29rem;
         }
     }
 
+    &__button {
+        background-color: $color-01;
+        border-radius: 5px;
+        color: white;
+        display: block;
+        font-size: $font-medium;
+        margin: $mt-02 auto $mb;
+        padding: 4px 8px;
+        text-align: center;
+        text-decoration: none;
+    }
 }
